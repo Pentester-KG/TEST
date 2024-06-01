@@ -1,0 +1,30 @@
+{% include 'header.html'%}
+
+
+    {% for j in Deviz %}
+        <h1> {{ j.title }}</h1>
+    {% endfor %}
+
+    <ul>
+
+
+    {% for i in Video %}
+        <li>
+            <h3>{{ i.title }}</h3>
+            <iframe src="{{ i.link }}"></iframe>
+
+        </li>
+    {% endfor %}
+
+
+        {% for i in TopTechnic %}
+        <li>
+            <h3>{{ i.name }}</h3>
+            <p>{{ i.description }}</p>
+            <p> цена: {{ i.price }}</p>
+            <img src="{{ i.image.url }}" width="400" height="400">
+
+        </li>
+    {% endfor %}
+</ul>
+{% include 'footer.html'%}

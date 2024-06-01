@@ -1,0 +1,17 @@
+{% include "header.html" %}
+
+
+<br>
+    {% for i in electronics_list %}
+<div class="card" style="width: 18rem;">
+    <img src="{{ i.photo.url }}" class="card-img-top" alt="..." >
+  <div class="card-body">
+    <h5 class="card-title">{{ i.name }}</h5>
+    <p class="card-text">{{  i.price }}</p>
+     <button><a href="/electronics/{{ i.id }}">Подробнее</a></button>
+  </div>
+    {% endfor %}
+</div>
+<br>
+
+{% include 'footer.html' %}

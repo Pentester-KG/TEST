@@ -1,0 +1,33 @@
+{% include 'header.html'%}
+<br>
+<center>
+
+
+<img src="{{ electronic.photo.url }}" class="img-thumbnail" alt="" width="300">
+<br>
+    <br>
+<div class="card" style="width: 30rem;">
+  <div class="card-header">
+    <h1>{{ electronic.name }}</h1>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"><b>Цена: {{ electronic.price }}₽</b> </li>
+      <li class="list-group-item">Характеристика {{ electronic.feature }}</li>
+       <li class="list-group-item">{% for j in i.tags.all %}
+                    <p>#{{ j.name }}</p>
+                {% endfor %}</li>
+    
+  </ul>
+</div>
+</center>
+  <button><a href="/create_comment/">Оставить отзыв</a></button>
+<table border="1" width="600" cellpadding="5">
+    <tr>
+        <td>Оценка </td>  <td>Отзыв</td> <td>Дата отзыва</td>
+    </tr>
+    {% for i in books.review_book.all %}
+    <tr>
+        <td>{{ i.stars }}</td> <td>{{ i.text }}</td> <td>{{ i.created_at }}</td>
+    </tr>
+    {% endfor %}
+</table>
